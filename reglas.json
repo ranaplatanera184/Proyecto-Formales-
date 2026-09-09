@@ -1,0 +1,20 @@
+[
+  {
+    "nombreRegla": "ValidarCorreo",
+    "metodo": "revisarCorreo",
+    "descripcion": "Valida el formato de un correo electronico",
+    "palabras": ["CORREO"]
+  },
+  {
+    "nombreRegla": "VerificarContrasena",
+    "metodo": "revisarContrasena",
+    "descripcion": "Verifica la fortaleza de una contrasena",
+    "palabras": ["CONTRASEÑA"]
+  },
+  {
+    "nombreRegla": "Cerrar",
+    "metodo": "revisarCerrar",
+    "descripcion": "Detiene la ejecucion del programa",
+    "palabras": ["CERRAR"]
+  }
+]
