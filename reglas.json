@@ -1,20 +1,56 @@
 [
   {
-    "nombreRegla": "ValidarCorreo",
-    "metodo": "revisarCorreo",
-    "descripcion": "Valida el formato de un correo electronico",
-    "palabras": ["CORREO"]
+    "nombreRegla": "ValidarCredenciales",
+    "palabras": ["VALIDAR"],
+    "tipo": "validar_interactivo",
+    "descripcion": "Valida correo y contrasena de forma interactiva"
   },
   {
-    "nombreRegla": "VerificarContrasena",
-    "metodo": "revisarContrasena",
-    "descripcion": "Verifica la fortaleza de una contrasena",
-    "palabras": ["CONTRASEÑA"]
+    "nombreRegla": "ValidarCorreo",
+    "palabras": ["CORREO"],
+    "tipo": "validar",
+    "token_valor": ["CORREO", "PALABRA", "VALOR"],
+    "funcion_validacion": "validacion_correo",
+    "descripcion": "Valida el formato de un correo electronico"
+  },
+  {
+    "nombreRegla": "ValidarContrasena",
+    "palabras": ["CONTRASEÑA"],
+    "tipo": "validar",
+    "token_valor": ["CADENA", "VALOR", "PALABRA"],
+    "funcion_validacion": "validacion_contrasena",
+    "descripcion": "Verifica la fortaleza de una contrasena"
   },
   {
     "nombreRegla": "Cerrar",
-    "metodo": "revisarCerrar",
-    "descripcion": "Detiene la ejecucion del programa",
-    "palabras": ["CERRAR"]
+    "palabras": ["CERRAR"],
+    "tipo": "salir",
+    "descripcion": "Detiene la ejecucion del programa"
+  },
+  {
+    "nombreRegla": "Historial",
+    "palabras": ["HISTORIAL"],
+    "tipo": "mostrar",
+    "accion": "mostrar_historial",
+    "descripcion": "Muestra los correos validados exitosamente"
+  },
+  {
+    "nombreRegla": "Usuarios",
+    "palabras": ["USUARIOS"],
+    "tipo": "mostrar",
+    "accion": "mostrar_usuarios",
+    "descripcion": "Muestra los usuarios con correo y contrasena validados"
+  },
+  {
+    "nombreRegla": "Exportar",
+    "palabras": ["EXPORTAR"],
+    "tipo": "exportar",
+    "descripcion": "Exporta historial y usuarios a un archivo JSON"
+  },
+  {
+    "nombreRegla": "Ayuda",
+    "palabras": ["AYUDA"],
+    "tipo": "ayuda",
+    "descripcion": "Muestra la lista de comandos disponibles"
   }
 ]

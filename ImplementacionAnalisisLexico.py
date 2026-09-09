@@ -12,7 +12,12 @@ def tokenizar(cadena):
     palabrasReservadas = {
         "CORREO",
         "CONTRASEÑA",
-        "CERRAR"
+        "CERRAR",
+        "HISTORIAL",
+        "USUARIOS",
+        "EXPORTAR",
+        "AYUDA",
+        "VALIDAR"
     }
 
     simbolos = {

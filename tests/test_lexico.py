@@ -67,3 +67,11 @@ def test_tokenizar_correo_con_numeros():
     assert len(tokens) == 3
     assert tokens[2].token == "CORREO"
     assert tokens[2].valor == "juan.perez01@uptc.edu.co"
+
+
+def test_tokenizar_validar():
+    tokens, errores = tokenizar("VALIDAR")
+    assert len(errores) == 0
+    assert len(tokens) == 1
+    assert tokens[0].token == "PALABRA RESERVADA"
+    assert tokens[0].valor == "VALIDAR"
