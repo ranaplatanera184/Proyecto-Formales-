@@ -1,6 +1,6 @@
 import json
 from validaciones import validacion_correo, validacion_contrasena
-from ImplementacionAnalisisLexico import tokenizar_correo_completo
+from ImplementacionAnalisisLexico import tokenizar_correo_completo, tokenizar_contrasena_completo
 
 
 class GestorReglas:
@@ -53,7 +53,7 @@ class GestorReglas:
             parser.pos += 1
 
             token_siguiente = parser.actual()
-            while token_siguiente and token_siguiente.token in ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR"]:
+            while token_siguiente and token_siguiente.token in ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR", "LETRA", "ESPECIAL"]:
                 valor_completo += token_siguiente.valor
                 parser.pos += 1
                 token_siguiente = parser.actual()
@@ -109,16 +109,11 @@ class GestorReglas:
         print(f"\nCORREO VALIDO: {correo}")
 
         contrasena = input("Contraseña: ").strip()
-        tokens_contrasena, errores_lexicos = tokenizar_correo_completo(contrasena)
+        tokens_contrasena = tokenizar_contrasena_completo(contrasena)
         if tokens_contrasena:
             print("\nTOKENS:")
             for token in tokens_contrasena:
                 print(token)
-        if errores_lexicos:
-            print("\nERRORES LEXICOS:")
-            for error in errores_lexicos:
-                print(error)
-            return None
 
         errores_contrasena = validacion_contrasena(contrasena)
         if errores_contrasena:

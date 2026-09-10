@@ -9,7 +9,7 @@
     "nombreRegla": "ValidarCorreo",
     "palabras": ["CORREO"],
     "tipo": "validar",
-    "token_valor": ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR"],
+    "token_valor": ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR", "CORREO"],
     "funcion_validacion": "validacion_correo",
     "descripcion": "Valida el formato de un correo electronico"
   },
@@ -17,7 +17,7 @@
     "nombreRegla": "ValidarContrasena",
     "palabras": ["CONTRASEÑA"],
     "tipo": "validar",
-    "token_valor": ["CADENA", "VALOR", "PALABRA"],
+    "token_valor": ["CADENA", "VALOR", "PALABRA", "LETRA", "NUMERO", "ESPECIAL"],
     "funcion_validacion": "validacion_contrasena",
     "descripcion": "Verifica la fortaleza de una contrasena"
   },

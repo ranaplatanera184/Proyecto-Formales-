@@ -16,6 +16,7 @@ def test_revisarCorreo_valido():
         Token("PALABRA", "juan"),
         Token("PUNTO", "."),
         Token("PALABRA", "perez"),
+        Token("NUMERO", "01"),
         Token("ARROBA", "@"),
         Token("PALABRA", "uptc"),
         Token("PUNTO", "."),
@@ -45,7 +46,15 @@ def test_revisarContrasena_valida():
     tokens = [
         Token("PALABRA RESERVADA", "CONTRASEÑA"),
         Token("DOS PUNTOS", ":"),
-        Token("CADENA", "MiClave123!")
+        Token("LETRA", "M"),
+        Token("LETRA", "i"),
+        Token("LETRA", "C"),
+        Token("LETRA", "l"),
+        Token("LETRA", "a"),
+        Token("LETRA", "v"),
+        Token("LETRA", "e"),
+        Token("NUMERO", "123"),
+        Token("ESPECIAL", "!")
     ]
     gestor = GestorReglas()
     analizador = AnalisisSintactico(tokens, gestorReglas=gestor)
@@ -57,7 +66,11 @@ def test_revisarContrasena_debil():
     tokens = [
         Token("PALABRA RESERVADA", "CONTRASEÑA"),
         Token("DOS PUNTOS", ":"),
-        Token("CADENA", "corta")
+        Token("LETRA", "c"),
+        Token("LETRA", "o"),
+        Token("LETRA", "r"),
+        Token("LETRA", "t"),
+        Token("LETRA", "a")
     ]
     gestor = GestorReglas()
     analizador = AnalisisSintactico(tokens, gestorReglas=gestor)

@@ -1,7 +1,7 @@
 import sys
 import os
 
-from ImplementacionAnalisisLexico import tokenizar_correo_completo
+from ImplementacionAnalisisLexico import tokenizar_correo_completo, tokenizar_linea_completo
 from AnalisisSintactico import AnalisisSintactico
 from gestor_reglas import GestorReglas
 from almacenamiento import Almacenamiento
@@ -18,7 +18,7 @@ def ejecutar_linea(texto, gestor, almacenamiento):
     if texto.startswith("#"):
         return None
 
-    tokens, errores = tokenizar_correo_completo(texto)
+    tokens, errores = tokenizar_linea_completo(texto)
 
     if errores:
         print("\nERRORES LEXICOS:")
