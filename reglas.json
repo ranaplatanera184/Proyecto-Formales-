@@ -9,7 +9,7 @@
     "nombreRegla": "ValidarCorreo",
     "palabras": ["CORREO"],
     "tipo": "validar",
-    "token_valor": ["CORREO", "PALABRA", "VALOR"],
+    "token_valor": ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR"],
     "funcion_validacion": "validacion_correo",
     "descripcion": "Valida el formato de un correo electronico"
   },

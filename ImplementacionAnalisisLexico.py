@@ -21,12 +21,12 @@ def tokenizar(cadena):
     }
 
     simbolos = {
-        "," : "COMA",
-        ":" : "DOS PUNTOS",
-        ";" : "PUNTO Y COMA"
+        ",": "COMA",
+        ":": "DOS PUNTOS",
+        ";": "PUNTO Y COMA",
+        ".": "PUNTO",
+        "@": "ARROBA"
     }
-
-    patron_correo = r"^[a-zA-Z]+\.[a-zA-Z]+[0-9]{0,2}@uptc\.edu\.co$"
 
     while i < n:
         cdn = cadena[i]
@@ -66,24 +66,29 @@ def tokenizar(cadena):
 
             continue
 
-        if cdn.isalnum() or cdn in "._%-+@#":
+        if cdn.isdigit():
+            inicio = i
+
+            while i < n and cadena[i].isdigit():
+                i += 1
+
+            numero = cadena[inicio:i]
+            tokens.append(Token("NUMERO", numero))
+            continue
+
+        if cdn in simbolos:
+            tokens.append(Token(simbolos[cdn], cdn))
+            i += 1
+            continue
+
+        if cdn in "._%-+@#":
             inicio = i
 
             while i < n and (cadena[i].isalnum() or cadena[i] in "._%+-@#!$%^&*()?:;{}|<>"):
                 i += 1
 
             valor = cadena[inicio:i]
-
-            if re.fullmatch(patron_correo, valor):
-                tokens.append(Token("CORREO", valor))
-                continue
-            else:
-                tokens.append(Token("VALOR", valor))
-                continue
-
-        if cdn in simbolos:
-            tokens.append(Token(simbolos[cdn], cdn))
-            i += 1
+            tokens.append(Token("VALOR", valor))
             continue
 
         errores.append(f"ERROR LEXICO: Caracter no reconocido '{cdn}'")

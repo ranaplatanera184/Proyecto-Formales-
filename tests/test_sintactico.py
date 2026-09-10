@@ -13,7 +13,15 @@ def test_revisarCorreo_valido():
     tokens = [
         Token("PALABRA RESERVADA", "CORREO"),
         Token("DOS PUNTOS", ":"),
-        Token("CORREO", "juan.perez@uptc.edu.co")
+        Token("PALABRA", "juan"),
+        Token("PUNTO", "."),
+        Token("PALABRA", "perez"),
+        Token("ARROBA", "@"),
+        Token("PALABRA", "uptc"),
+        Token("PUNTO", "."),
+        Token("PALABRA", "edu"),
+        Token("PUNTO", "."),
+        Token("PALABRA", "co")
     ]
     gestor = GestorReglas()
     analizador = AnalisisSintactico(tokens, gestorReglas=gestor)
@@ -30,7 +38,7 @@ def test_revisarCorreo_invalido():
     gestor = GestorReglas()
     analizador = AnalisisSintactico(tokens, gestorReglas=gestor)
     resultado = analizador.revisarSintaxis()
-    assert resultado is True
+    assert resultado is False
 
 
 def test_revisarContrasena_valida():
@@ -54,7 +62,7 @@ def test_revisarContrasena_debil():
     gestor = GestorReglas()
     analizador = AnalisisSintactico(tokens, gestorReglas=gestor)
     resultado = analizador.revisarSintaxis()
-    assert resultado is True
+    assert resultado is False
 
 
 def test_revisarCerrar():

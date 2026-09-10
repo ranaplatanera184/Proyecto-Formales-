@@ -41,14 +41,28 @@ class GestorReglas:
         parser.consumir("PALABRA RESERVADA")
         parser.consumir("DOS PUNTOS")
 
-        token_valor = parser.consumir_o(regla["token_valor"])
-        valor = token_valor.valor
+        token_valor = parser.actual()
+
+        if token_valor is None:
+            raise SyntaxError("No hay token después de DOS PUNTOS")
+
+        valor_completo = ""
+
+        if token_valor.token in regla["token_valor"]:
+            valor_completo = token_valor.valor
+            parser.pos += 1
+
+            token_siguiente = parser.actual()
+            while token_siguiente and token_siguiente.token in ["PALABRA", "PUNTO", "NUMERO", "ARROBA", "CADENA", "VALOR"]:
+                valor_completo += token_siguiente.valor
+                parser.pos += 1
+                token_siguiente = parser.actual()
 
         funcion = regla["funcion_validacion"]
         if funcion == "validacion_correo":
-            errores = validacion_correo(valor)
+            errores = validacion_correo(valor_completo)
         elif funcion == "validacion_contrasena":
-            errores = validacion_contrasena(valor)
+            errores = validacion_contrasena(valor_completo)
         else:
             raise SyntaxError(f"Funcion de validacion desconocida: '{funcion}'")
 
@@ -59,14 +73,14 @@ class GestorReglas:
             return False
 
         if funcion == "validacion_correo":
-            print(f"CORREO VALIDO: {valor}")
+            print(f"CORREO VALIDO: {valor_completo}")
             if self.almacenamiento:
-                self.almacenamiento.agregar_correo(valor)
+                self.almacenamiento.agregar_correo(valor_completo)
         elif funcion == "validacion_contrasena":
             print("CONTRASEÑA VALIDA")
             if self.almacenamiento:
                 correo_actual = self._obtener_ultimo_correo()
-                self.almacenamiento.agregar_usuario(correo_actual, valor)
+                self.almacenamiento.agregar_usuario(correo_actual, valor_completo)
 
         return True
 
