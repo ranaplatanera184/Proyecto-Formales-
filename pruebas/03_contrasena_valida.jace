@@ -1,0 +1,10 @@
+# Prueba 3: Validación de contraseña
+# Archivo: 03_contrasena_valida.jace
+
+# Contraseña fuerte
+CONTRASEÑA: "MiClave123!"
+
+# Otra contraseña válida
+CONTRASEÑA: "Segura@456"
+
+CERRAR

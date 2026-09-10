@@ -1,0 +1,14 @@
+# Prueba 8: Exportar datos
+# Archivo: 08_exportar.jace
+
+# Registrar usuarios
+CORREO: ana.torres@uptc.edu.co
+CONTRASEÑA: "AnaExport1!"
+
+CORREO: diego.rivera05@uptc.edu.co
+CONTRASEÑA: "DiegoExport2!"
+
+# Exportar a JSON
+EXPORTAR
+
+CERRAR

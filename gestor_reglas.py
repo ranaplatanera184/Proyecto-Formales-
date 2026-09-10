@@ -56,7 +56,7 @@ class GestorReglas:
             print(f"ERRORES EN EL {regla['nombreRegla'].replace('Validar', '').replace('Verificar', '').upper()}:")
             for error in errores:
                 print(f"- {error}")
-            return None
+            return False
 
         if funcion == "validacion_correo":
             print(f"CORREO VALIDO: {valor}")

@@ -1,0 +1,9 @@
+# Prueba 4: Correos inválidos (debe fallar)
+# Archivo: 04_correo_invalido.jace
+
+# Dominio incorrecto
+CORREO: juan.perez@gmail.com
+
+# Esto no se ejecutará porque falla arriba
+CONTRASEÑA: "NoSeEjecuta123!"
+CERRAR

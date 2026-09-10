@@ -1,0 +1,9 @@
+# Prueba 5: Contraseña débil (debe fallar)
+# Archivo: 05_contrasena_debil.jace
+
+CORREO: pedro.ramirez@uptc.edu.co
+
+# Contraseña sin mayúscula
+CONTRASEÑA: "debil123!"
+
+CERRAR

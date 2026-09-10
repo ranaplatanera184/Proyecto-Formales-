@@ -1,0 +1,24 @@
+# ========================================
+# PRUEBA COMPLETA DEL SISTEMA JACE
+# ========================================
+# Archivo: 10_completo.jace
+
+# ---- FASE 1: Validar correos ----
+CORREO: francisco.quiroga@uptc.edu.co
+CORREO: andrea.suarez23@uptc.edu.co
+CORREO: miguel.castillo@uptc.edu.co
+
+# ---- FASE 2: Validar contraseñas ----
+CONTRASEÑA: "Francisco2024!"
+CONTRASEÑA: "Andrea@Segura1"
+CONTRASEÑA: "Miguel#1234"
+
+# ---- FASE 3: Consultar datos ----
+HISTORIAL
+USUARIOS
+
+# ---- FASE 4: Exportar ----
+EXPORTAR
+
+# ---- FASE 5: Finalizar ----
+CERRAR

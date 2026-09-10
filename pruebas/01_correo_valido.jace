@@ -1,0 +1,5 @@
+# Prueba 1: Validación de correo UPTC válido
+# Archivo: 01_correo_valido.jace
+
+CORREO: juan.perez@uptc.edu.co
+CERRAR

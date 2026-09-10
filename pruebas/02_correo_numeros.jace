@@ -1,0 +1,13 @@
+# Prueba 2: Correo con números opcionales
+# Archivo: 02_correo_numeros.jace
+
+# Sin números
+CORREO: maria.garcia@uptc.edu.co
+
+# Con 1 dígito
+CORREO: carlos.lopez9@uptc.edu.co
+
+# Con 2 dígitos
+CORREO: ana.martinez42@uptc.edu.co
+
+CERRAR

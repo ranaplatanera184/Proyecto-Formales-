@@ -1,0 +1,22 @@
+# Prueba 6: Múltiples usuarios
+# Archivo: 06_multiples_usuarios.jace
+
+# Usuario 1
+CORREO: juan.perez@uptc.edu.co
+CONTRASEÑA: "ClaveJuan1!"
+
+# Usuario 2
+CORREO: maria.garcia01@uptc.edu.co
+CONTRASEÑA: "ClaveMaria2!"
+
+# Usuario 3
+CORREO: carlos.lopez99@uptc.edu.co
+CONTRASEÑA: "ClaveCarlos3!"
+
+# Ver historial
+HISTORIAL
+
+# Ver usuarios
+USUARIOS
+
+CERRAR
